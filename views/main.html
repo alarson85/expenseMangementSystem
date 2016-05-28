@@ -3,29 +3,31 @@
 	<div id="stripe">
 	</div>
 	<div class="container">
-		<div class="">
-			<div class="inputBox">
-				<p>merchant:</p>
-				<input>
+		<form ng-submit="addExpense()">
+			<div class="">
+				<div class="inputBox">
+					<p>merchant:</p>
+					<input type="merchant" ng-model="add.merchant" required>
+				</div>
+				<div class="inputBox">
+					<p>total amount:</p>
+					<input type="" placeholder="$ " ng-model="add.total" required>
+				</div>
+				<div class="inputBox">
+					<p>category:</p>
+					<input ng-model="add.category">
+				</div>
+				<div class="inputBox">
+					<p>date:</p>
+					<input type="date" ng-model="add.date">
+				</div>
+				<div class="inputBox">
+					<p>comments:</p>
+					<input type="textarea" ng-model="add.comment">
+				</div>
+				<button id="submitBtn" type="submit">add</button>
 			</div>
-			<div class="inputBox">
-				<p>total amount:</p>
-				<input value="$ " >
-			</div>
-			<div class="inputBox">
-				<p>category:</p>
-				<input>
-			</div>
-			<div class="inputBox">
-				<p>date:</p>
-				<input type="date">
-			</div>
-			<div class="inputBox">
-				<p>comments:</p>
-				<input type="textarea">
-			</div>
-			<button id="submitBtn">add</button>
-		</div>
+		</form>
 	</div>
 	<div class="container">
 		<div class="pending">
@@ -36,6 +38,18 @@
 				><span class="headSpan border">category</span
 				><span class="headSpan border">date</span
 				><span class="headSpan">comment</span>
+			</div>
+			<div class="content" ng-repeat="expense in expenses">
+				<div class="btnsStripe">
+					<button class="contBtns">edit</button>
+					<button class="contBtns">reimburse</button>
+					<button class="contBtns">remove</button>
+				</div>
+				<span class="headSpan"><span class="new">new</span></span>
+				<span class="headSpan"></span>
+				<span class="headSpan"></span>
+				<span class="headSpan"></span>
+				<span class="headSpan"></span>
 			</div>
 			<div class="content">
 				<div class="btnsStripe">
